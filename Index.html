@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nandotsav Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: 'Lora', serif;
+            background-color: #FFF8E1; 
+            color: #5D4037; 
+            text-align: center;
+        }
+
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        
+        .heading-image-container img {
+            width: 100%; 
+            height: auto; 
+            max-width: 650px; 
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        
+        .invitation-text {
+            padding: 0 15px;
+            margin-bottom: 40px;
+        }
+
+        .invitation-text h1 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 2.8rem;
+            color: #D81B60; 
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .invitation-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+        }
+
+        
+        .card-gallery {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 30px; 
+        }
+
+        .image-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%; 
+            max-width: 350px; 
+            padding: 15px;
+            box-sizing: border-box; 
+            overflow: hidden; 
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-card img {
+            width: 100%;
+            
+            height: 400px; 
+            object-fit: cover; 
+            display: block;
+            border-radius: 10px; 
+        }
+        
+        
+        .details-location-section {
+            margin-top: 50px;
+            padding: 25px;
+            background-color: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid #D81B60;
+        }
+        
+        .details-location-section h2 {
+            font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 2rem;
+            color: #5D4037;
+            margin-bottom: 20px;
+        }
+        
+        .event-details p {
+            font-size: 1.2rem;
+            margin: 8px 0;
+        }
+
+        .location-map {
+            margin-top: 30px;
+            border-radius: 15px;
+            overflow: hidden; 
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+        }
+
+
+       
+
+        @media (min-width: 768px) {
+            .invitation-text h1 {
+                font-size: 3.5rem;
+            }
+            .invitation-text p {
+                font-size: 1.3rem;
+            }
+            .image-card {
+                 
+                width: calc(50% - 15px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="heading-image-container">
+            <img src="./Images/heading_New.jpg" alt="Nandotsav Invitation Heading">
+        </div>
+
+       
+        <div class="invitation-text">
+            <h1>Janmashtami</h1>
+            <p>We cordially invite you and your family to grace the blessed occasion of Janmashtami at Wani House. Please join us for an evening from 6pm Onwards for taking Darshan of Laddu Gopal!</p>
+        </div>
+
+        
+        <div class="card-gallery">
+            <div class="image-card">
+                <img src="./Images/laddu gopal image.jpg"Laddu Gopal Image 1">
+            </div>
+            <div class="image-card">
+                <img src="./Images/Laddu gopal image 1.jpg" alt="Laddu Gopal Image 2">
+            </div>
+        </div>
+        
+       
+        <div class="details-location-section">
+            <h2>Event Details & Location</h2>
+            <div class="event-details">
+                <p><strong>Date:</strong> Sunday, 17th August 2025</p>
+                <p><strong>Time:</strong> 6:00 PM Onwards</p>
+                <p><strong>Venue:</strong> Wani House</p>
+            </div>
+            <div class="location-map">
+                
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d504.59213817032247!2d73.77539516852445!3d19.98639709212527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb324afdf3c7%3A0x648f92b301701efe!2sRatan%20Paradise!5e0!3m2!1sen!2sin!4v1755239675447!5m2!1sen!2sin" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
