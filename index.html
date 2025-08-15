@@ -43,7 +43,7 @@
         .invitation-text h1 {
             font-family: 'Tiro Devanagari Hindi', serif;
             font-size: 2.8rem;
-            color: #D81B60; 
+            color: #F57C00; /* Orange Color */
             margin-bottom: 10px;
             font-weight: 700;
         }
@@ -82,13 +82,65 @@
 
         .image-card img {
             width: 100%;
-            
             height: 400px; 
             object-fit: cover; 
             display: block;
             border-radius: 10px; 
         }
         
+      
+        .countdown-container {
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+            max-width: 600px;
+        }
+        
+        .countdown-container h2 {
+             font-family: 'Tiro Devanagari Hindi', serif;
+            font-size: 2rem;
+            color: #5D4037;
+            margin-bottom: 25px;
+        }
+
+        #timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .timer-box {
+            background: #FFF8E1;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100px;
+            border: 1px solid #F57C00; 
+        }
+
+        .timer-box span {
+            display: block;
+        }
+
+        .timer-box .time {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #F57C00;
+        }
+
+        .timer-box .label {
+            font-size: 1rem;
+            margin-top: 5px;
+            color: #5D4037;
+        }
+        
+        #timer-finished-message {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #F57C00;
+            padding: 40px 20px;
+        }
         
         .details-location-section {
             margin-top: 50px;
@@ -96,7 +148,7 @@
             background-color: #FFFFFF;
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0,0,0,0.05);
-            border-top: 5px solid #D81B60;
+            border-top: 5px solid #F57C00;
         }
         
         .details-location-section h2 {
@@ -124,7 +176,7 @@
         }
 
 
-       
+        
 
         @media (min-width: 768px) {
             .invitation-text h1 {
@@ -138,6 +190,16 @@
                 width: calc(50% - 15px);
             }
         }
+        
+        @media (max-width: 480px) {
+            .timer-box {
+                width: 70px;
+                padding: 10px;
+            }
+             .timer-box .time {
+                font-size: 2rem;
+            }
+        }
 
     </style>
 </head>
@@ -149,23 +211,48 @@
             <img src="./Images/heading_New.jpg" alt="Nandotsav Invitation Heading">
         </div>
 
-       
+        
         <div class="invitation-text">
             <h1>Janmashtami</h1>
-            <p>We cordially invite you and your family to grace the blessed occasion of Janmashtami at Wani House. Please join us for an evening from 6pm Onwards for taking Darshan of Laddu Gopal!</p>
+            <p>We cordially invite you and your family to grace the blessed occasion of Janmashtami at Wani House. Please join us for an evening on 17th August 2025 from 6pm Onwards for taking Darshan of Laddu Gopal!</p>
         </div>
 
         
         <div class="card-gallery">
             <div class="image-card">
-                <img src="./Images/laddu gopal image.jpg"Laddu Gopal Image 1">
+                <img src="./Images/laddu gopal image.jpg" alt="Laddu Gopal Image 1">
             </div>
             <div class="image-card">
                 <img src="./Images/Laddu gopal image 1.jpg" alt="Laddu Gopal Image 2">
             </div>
         </div>
         
-       
+        <!-- Countdown Timer Section -->
+        <div class="countdown-container">
+            <h2 id="timer-title">Program Starts In</h2>
+            <div id="timer">
+                <div class="timer-box">
+                    <span id="days" class="time">0</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="timer-box">
+                    <span id="hours" class="time">0</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="timer-box">
+                    <span id="minutes" class="time">0</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="timer-box">
+                    <span id="seconds" class="time">0</span>
+                    <span class="label">Seconds</span>
+                </div>
+            </div>
+            <div id="timer-finished-message" style="display: none;">
+                The Program has Started!
+            </div>
+        </div>
+        
         <div class="details-location-section">
             <h2>Event Details & Location</h2>
             <div class="event-details">
@@ -185,5 +272,37 @@
         </div>
     </div>
     
+    <script>
+       
+
+        const countDownDate = new Date("Aug 17, 2025 18:00:00").getTime();
+
+        const x = setInterval(function() {
+
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            const distance = countDownDate - now;
+            
+          
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+         
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+            
+           
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer-title").style.display = "none";
+                document.getElementById("timer").style.display = "none";
+                document.getElementById("timer-finished-message").style.display = "block";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
